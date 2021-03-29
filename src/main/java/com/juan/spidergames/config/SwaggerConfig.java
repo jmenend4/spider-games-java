@@ -13,10 +13,9 @@ public class SwaggerConfig {
 	
 	@Bean
 	public Docket swagger() {
-		System.out.println("holahola");
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.any())
+				.apis(RequestHandlerSelectors.basePackage("com.juan.spidergames.resources"))
 				.paths(PathSelectors.any())
 				.build();
 	}
