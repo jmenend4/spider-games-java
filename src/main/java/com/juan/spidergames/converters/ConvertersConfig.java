@@ -16,6 +16,8 @@ public class ConvertersConfig {
 		List<Converter<?, ?>> converters = new ArrayList<>();
 		converters.add(new CellsReadConverter());
 		converters.add(new CellsWriteConverter());
+		converters.add(new KakuroStatusReadConverter());
+		converters.add(new KakuroStatusWriteConverter());
 		
 		return new MongoCustomConversions(converters);
 	}

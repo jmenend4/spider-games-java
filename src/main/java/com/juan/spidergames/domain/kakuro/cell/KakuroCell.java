@@ -1,4 +1,4 @@
-package com.juan.spidergames.domain;
+package com.juan.spidergames.domain.kakuro.cell;
 
 public interface KakuroCell {
 	

@@ -5,11 +5,11 @@ import java.util.List;
 
 import org.springframework.core.convert.converter.Converter;
 
-import com.juan.spidergames.domain.BlackCell;
-import com.juan.spidergames.domain.KakuroCell;
-import com.juan.spidergames.domain.PersistedCell;
-import com.juan.spidergames.domain.ReferenceCell;
-import com.juan.spidergames.domain.WhiteCell;
+import com.juan.spidergames.domain.kakuro.cell.BlackCell;
+import com.juan.spidergames.domain.kakuro.cell.KakuroCell;
+import com.juan.spidergames.domain.kakuro.cell.PersistedCell;
+import com.juan.spidergames.domain.kakuro.cell.ReferenceCell;
+import com.juan.spidergames.domain.kakuro.cell.WhiteCell;
 
 public class CellsReadConverter implements Converter<List<List<PersistedCell>>, List<List<KakuroCell>>> {
 
