@@ -1,10 +1,13 @@
 package com.juan.spidergames.resources;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.juan.spidergames.api.responses.BaseBodyResponse;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -32,8 +35,8 @@ public class KakuroController {
         @ApiResponse(code = 500, message = "Internal server error")})
 	@ApiImplicitParam (name = "Authorization", value = "Authorization token", dataType = "String", paramType = "header")
 	@PutMapping
-	public Integer putKakuro() {
-		return 3;
+	public ResponseEntity<BaseBodyResponse<String>> putKakuro() {
+		return facade.putKakuro();
 	}
 
 }
