@@ -1,12 +1,12 @@
 package com.juan.spidergames.domain.kakuro.cell;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Builder
-@Getter
+@Data
+@NoArgsConstructor
 public class WhiteCell implements KakuroCell{
 	
-	private final CellType cellType = CellType.WHITE;
+	private CellType cellType = CellType.WHITE;
 	private Integer value;
 }

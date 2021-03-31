@@ -1,13 +1,13 @@
 package com.juan.spidergames.domain.kakuro.cell;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Builder
-@Getter
+@Data
+@NoArgsConstructor
 public class ReferenceCell implements KakuroCell {
 	
-	private final CellType cellType = CellType.REFERENCE;
+	private CellType cellType = CellType.REFERENCE;
 	private Integer rightReference;
 	private Integer downReference;
 }

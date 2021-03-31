@@ -5,9 +5,9 @@ import org.springframework.http.HttpStatus;
 import lombok.Getter;
 
 @Getter
+@SuppressWarnings("serial")
 public class BaseBodyResponseException extends RuntimeException {
 
-	private static final long serialVersionUID = 7442870445642147368L;
 	private BodyError error;
 	
 	public BaseBodyResponseException(String message, HttpStatus status) {

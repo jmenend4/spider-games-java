@@ -14,10 +14,10 @@ public class ConvertersConfig {
 	@Bean
 	public MongoCustomConversions cellsConverters() {
 		List<Converter<?, ?>> converters = new ArrayList<>();
-		converters.add(new CellsReadConverter());
-		converters.add(new CellsWriteConverter());
 		converters.add(new KakuroStatusReadConverter());
 		converters.add(new KakuroStatusWriteConverter());
+		converters.add(new DificultyReadConverter());
+		converters.add(new DificultyWriteConverter());
 		
 		return new MongoCustomConversions(converters);
 	}

@@ -7,12 +7,20 @@ import com.juan.spidergames.domain.kakuro.cell.KakuroCell.CellType;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @ApiModel(description = "Transfer object for any cell type")
-public class CellDTO {
+public class KakuroCellDTO {
 	
 	@ApiModelProperty(value = "One of the cell types in enum", required = true)
-	private CellType cellType = CellType.REFERENCE;
+	private CellType cellType;
 	
 	@Min(3)
 	@Max(45)

@@ -19,4 +19,16 @@ public class EnumUtils {
 		return kakuroStatusCodeIndex.get(code);
 	}
 
+	private static final Map<String, Dificulty> dificultyCodeIndex =
+			Maps.newHashMapWithExpectedSize(Dificulty.values().length);
+	
+	static {
+		for (Dificulty dificulty : Dificulty.values()) {
+			dificultyCodeIndex.put(dificulty.getCode(), dificulty);
+		}
+	}
+	
+	public static Dificulty getDificultyByCode(String code) {
+		return dificultyCodeIndex.get(code);
+	}
 }

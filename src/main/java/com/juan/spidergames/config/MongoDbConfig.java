@@ -5,6 +5,8 @@ import java.util.Collections;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
@@ -12,11 +14,12 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 
 @Configuration
+@EnableMongoAuditing
+@EnableMongoRepositories(basePackages = {"com.juan.spidergames.repositories"})
 public class MongoDbConfig extends AbstractMongoClientConfiguration {
 
 	@Override
 	protected String getDatabaseName() {
-		// TODO Auto-generated method stub 
 		return "spidergames";
 	}
 	
