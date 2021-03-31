@@ -14,7 +14,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.juan.spidergames.domain.kakuro.cell.KakuroCell;
-import com.juan.spidergames.enums.Dificulty;
+import com.juan.spidergames.enums.Difficulty;
 import com.juan.spidergames.enums.KakuroStatus;
 
 import lombok.AllArgsConstructor;
@@ -32,7 +32,7 @@ public class Kakuro {
 	@Id
 	private String id;
 	
-	private Dificulty dificulty;
+	private Difficulty difficulty;
 	
 	@Min(3)
 	@Max(14)

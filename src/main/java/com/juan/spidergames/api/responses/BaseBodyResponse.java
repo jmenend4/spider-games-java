@@ -1,6 +1,5 @@
 package com.juan.spidergames.api.responses;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import org.springframework.http.HttpStatus;

@@ -2,11 +2,14 @@ package com.juan.spidergames.resources;
 
 import java.util.Optional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.juan.spidergames.api.responses.BaseBodyResponseException;
 import com.juan.spidergames.domain.kakuro.Kakuro;
+import com.juan.spidergames.enums.Difficulty;
 import com.juan.spidergames.repositories.KakuroRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -33,6 +36,10 @@ public class KakuroService {
 
 	public Optional<Kakuro> getById(String id) {
 		return this.repository.findById(id);
+	}
+
+	public Page<Kakuro> getByDifficulty(Difficulty difficulty, Pageable pageable) {
+		return this.repository.findByDifficulty(difficulty, pageable);
 	}
 
 }

@@ -2,12 +2,12 @@ package com.juan.spidergames.converters;
 
 import org.springframework.core.convert.converter.Converter;
 
-import com.juan.spidergames.enums.Dificulty;
+import com.juan.spidergames.enums.Difficulty;
 
-public class DificultyWriteConverter implements Converter<Dificulty, String>{
+public class DificultyWriteConverter implements Converter<Difficulty, String>{
 
 	@Override
-	public String convert(Dificulty dificulty) {
+	public String convert(Difficulty dificulty) {
 		return dificulty.getCode();
 	}
 

@@ -1,12 +1,12 @@
 package com.juan.spidergames.enums;
 
-public enum Dificulty {
+public enum Difficulty {
 	
 	EASY("E"), HARD("H"), NIGHTMARE("N");
 	
 	private final String code;
 	
-	Dificulty(String code) {
+	Difficulty(String code) {
 		this.code = code;
 	}
 	

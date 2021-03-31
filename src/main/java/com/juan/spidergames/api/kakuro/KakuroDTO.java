@@ -7,7 +7,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import com.juan.spidergames.enums.Dificulty;
+import com.juan.spidergames.enums.Difficulty;
 import com.juan.spidergames.enums.KakuroStatus;
 
 import io.swagger.annotations.ApiModel;
@@ -29,7 +29,7 @@ public class KakuroDTO {
 	private String id;
 	
 	@ApiModelProperty
-	private Dificulty dificulty;
+	private Difficulty difficulty;
 
 	@Min(3)
 	@Max(14)
