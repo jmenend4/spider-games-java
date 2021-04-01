@@ -3,6 +3,7 @@ package com.juan.spidergames.config;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
@@ -17,16 +18,25 @@ import com.mongodb.client.MongoClients;
 @EnableMongoAuditing
 @EnableMongoRepositories(basePackages = {"com.juan.spidergames.repositories"})
 public class MongoDbConfig extends AbstractMongoClientConfiguration {
+	
+	@Value("${datasource.mongo.username}")
+	private String username;
+	
+	@Value("${datasource.mongo.password}")
+	private String password;
+	
+	@Value("${datasource.mongo.dbname}")
+	private String dbname;
 
 	@Override
 	protected String getDatabaseName() {
-		return "spidergames";
+		return this.dbname;
 	}
 	
 	@Override
 	public MongoClient mongoClient() {
 		ConnectionString connectionString =
-				new ConnectionString("mongodb+srv://appuser1:DmLLWVFz9sGFLJzy@"
+				new ConnectionString("mongodb+srv://" + this.username + ":" + this.password + "@"
 						+ "cluster0.qafta.mongodb.net/" + getDatabaseName());
 		MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
 	            .applyConnectionString(connectionString)
